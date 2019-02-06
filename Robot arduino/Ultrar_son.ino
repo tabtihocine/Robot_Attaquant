@@ -9,7 +9,7 @@ int in3 = 8;
 int in4 = 9;
 int ENA = 5;
 int ENB = 11;
-int ABS = 200;
+int ABS = 100;
 int rightDistance = 0,leftDistance = 0,middleDistance = 0 ;
 void _mForward()
 {
@@ -60,7 +60,7 @@ void _mStop()
   digitalWrite(ENB,LOW);
   Serial.println("Stop!");
 } 
- /*Ultrasonic distance measurement Sub function*/
+ 
 int Distance_test()   
 {
   digitalWrite(Trig, LOW);   
@@ -75,7 +75,7 @@ int Distance_test()
 
 void setup() 
 { 
-  myservo.attach(3);// attach servo on pin 3 to servo object
+  myservo.attach(3);
   Serial.begin(9600);     
   pinMode(Echo, INPUT);    
   pinMode(Trig, OUTPUT);  
@@ -110,11 +110,6 @@ void loop()
       myservo.write(180);              
       delay(1000); 
       leftDistance = Distance_test();
-
-      #ifdef send
-      Serial.print("leftDistance=");
-      Serial.println(leftDistance);
-      #endif
 
       delay(500);
       myservo.write(90);              
