@@ -16,7 +16,7 @@ char str;
 
 /*
 #################### 
-##    mouvment    ##
+##    mouvments    ##
 ####################
 */
 void _mForward()
@@ -71,7 +71,7 @@ void _mStop()
 
 /*
 ####################### 
-## calcule distance  ##
+## calcul distance  ##
 #######################
 */
 int Distance_test()   
@@ -104,36 +104,13 @@ void setup() {
   pinMode(ENB,OUTPUT);
 
 }
-void loop() {
+
+/*Fonction pour faire marcher le robot d'une façon autonome 
+*Cette fonction est appelée en appuyant sur la "autonome" dans l'application
+*/
+void autonome (){
   
-    str=Serial.read();
-
-     if(str=='f')
-  {
-    _mForward();
-  }
-  else if(str=='b')
-  {
-    _mBack();
-    delay(200);
-  }
-  else if(str=='l')
-  {
-    _mLeft();
-    delay(200);
-  }
-  else if(str=='r')
-  {
-    _mRight();
-    delay(200);
-  }
-  else if(str=='s')
-  {
-     _mStop();     
-  }else{
-
-
-        myservo.write(80);
+    myservo.write(80);
     delay(500); 
     middleDistance = Distance_test();
 
@@ -178,35 +155,41 @@ void loop() {
        }
     }  
     else
-        _mForward();
-
-
-    
+        _mForward(); 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   
 
+void loop() {
+  
+    str=Serial.read();
+
+     if(str=='f')
+  {
+    _mForward();
+  }
+  else if(str=='b')
+  {
+    _mBack();
+    delay(200);
+  }
+  else if(str=='l')
+  {
+    _mLeft();
+    delay(200);
+  }
+  else if(str=='r')
+  {
+    _mRight();
+    delay(200);
+    
+  }else if (str=='s'){
+    _mStop();
+    delay(1000);
+  }
+  else if (str=='a'){
+    autonome();
+    delay(200);
+  }
+   
+ 
 }
