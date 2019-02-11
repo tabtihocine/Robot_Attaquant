@@ -8,15 +8,15 @@ int in3 = 8;
 int in4 = 9;
 int ENA = 5;
 int ENB = 11;
-int ABS = 100;
+int ABS = 150;
 int rightDistance = 0;
 int leftDistance = 0;
 int middleDistance = 0;
-char str;
+char ss;
 
 /*
 #################### 
-##    mouvments    ##
+##    mouvment    ##
 ####################
 */
 void _mForward()
@@ -41,7 +41,7 @@ void _mBack()
  Serial.println("go back!");
 }
 
-void _mLeft()
+void _mLeft()    
 {
  analogWrite(ENA,ABS);
  analogWrite(ENB,ABS);
@@ -71,7 +71,7 @@ void _mStop()
 
 /*
 ####################### 
-## calcul distance  ##
+## calcule distance  ##
 #######################
 */
 int Distance_test()   
@@ -85,6 +85,7 @@ int Distance_test()
   Fdistance= Fdistance/58;       
   return (int)Fdistance;
 } 
+
 
 /*
 ####################### 
@@ -104,13 +105,36 @@ void setup() {
   pinMode(ENB,OUTPUT);
 
 }
-
-/*Fonction pour faire marcher le robot d'une façon autonome 
-*Cette fonction est appelée en appuyant sur la "autonome" dans l'application
-*/
-void autonome (){
+void loop() {
   
-    myservo.write(80);
+    ss=Serial.read(); 
+   
+  
+   if(ss=='f')
+  {
+    _mForward();
+  }
+  else if(ss=='b')
+  {
+    _mBack();
+    delay(200);
+  }
+  else if(ss=='l')
+  {
+    _mLeft();
+    delay(200);
+  }
+  else if(ss=='r')
+  {
+    _mRight();
+    delay(200);
+  }
+  else if(ss=='s')
+  {
+     _mStop();    
+   }else{
+    
+      myservo.write(85);
     delay(500); 
     middleDistance = Distance_test();
 
@@ -122,10 +146,8 @@ void autonome (){
       myservo.write(90);          
       delay(1000);      
       rightDistance = Distance_test();
-
-
       delay(500);
-       myservo.write(10);              
+       myservo.write(15);              
       delay(1000);                                                  
       myservo.write(180);              
       delay(1000); 
@@ -137,12 +159,12 @@ void autonome (){
       if(rightDistance>leftDistance)  
       {
         _mRight();
-        delay(100);
+        delay(110);
        }
        else if(rightDistance<leftDistance)
        {
         _mLeft();
-        delay(100);
+        delay(110);
        }
        else if((rightDistance<=60)||(leftDistance<=60))
        {
@@ -155,41 +177,10 @@ void autonome (){
        }
     }  
     else
-        _mForward(); 
-  }
-  
+        _mForward();
+      
+      
+      }// end else cc
 
-void loop() {
-  
-    str=Serial.read();
-
-     if(str=='f')
-  {
-    _mForward();
-  }
-  else if(str=='b')
-  {
-    _mBack();
-    delay(200);
-  }
-  else if(str=='l')
-  {
-    _mLeft();
-    delay(200);
-  }
-  else if(str=='r')
-  {
-    _mRight();
-    delay(200);
-    
-  }else if (str=='s'){
-    _mStop();
-    delay(1000);
-  }
-  else if (str=='a'){
-    autonome();
-    delay(200);
-  }
-   
- 
+        
 }
