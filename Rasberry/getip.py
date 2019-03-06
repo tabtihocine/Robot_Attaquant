@@ -9,9 +9,10 @@ def getMyIp():
         line = file.readline()
         i = i + 1 
     ipsplit = line.split()
+    file.close()
     ipsplit = ipsplit[1].split('.')
     ipsplit[3] = '0'
     ipsplit = ".".join([ipsplit[0],ipsplit[1],ipsplit[2],ipsplit[3]])
     adress = ipsplit + "/24"
-    print(adress)
+    return adress
 getMyIp()
