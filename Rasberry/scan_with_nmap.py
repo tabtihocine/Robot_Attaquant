@@ -15,6 +15,8 @@ def scanwithnamp():
             listofport = nm[host][protocol].keys()
             for port in listofport:
                 file.write('\tport : '+ str(port) +\
+                    '\t\tstate : '+ str(nm[host][protocol][port]['state']) +\
+                    '\t\tservice : '+ str(nm[host][protocol][port]['name'])+\
                     '\t\tproduct : ' + str(nm[host][protocol][port]['product'])+ \
                     '\t\tversion : '+ str(nm[host][protocol][port]['version']) + '\n')
         file.write('\n\n')

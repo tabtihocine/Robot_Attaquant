@@ -1,9 +1,10 @@
+#!/usr/bin/python3.7
 import socket
 import os
 
 s = socket.socket()
-host = "AZRARA"
-#host = "192.168.1.43"
+host = "WhiteHack"
+#host = "192.168.43.61"
 port = 6677
 s.connect((host, port))
 print("Connected ...")
