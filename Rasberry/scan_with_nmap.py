@@ -1,11 +1,11 @@
 #!/usr/bin/python3.7
-import getip
+#import getip
 import nmap
 
 
 def scanwithnamp():
     nm = nmap.PortScanner()
-    nm.scan(hosts=getip.getMyIp(), arguments='-sS -sV -Pn')
+    nm.scan(hosts="192.168.43.0/24", arguments='-sS -sV -Pn')
     file = open("result_nmap.txt", "w")
     for host in nm.all_hosts():
         file.write('ip of Host :  ' + str(host) + '\n')
