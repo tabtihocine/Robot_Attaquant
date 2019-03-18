@@ -1,0 +1,657 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.43.240,hocine-PC,2869,tcp,0.0,Log,"","CGI Scanning Consolidation","The script consolidates various information for CGI scanning.
+
+  This information is based on the following scripts / settings:
+
+  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)
+
+  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)
+
+  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)
+
+  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)
+
+  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use
+
+  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and
+    'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the
+    'Global variable settings' of the scan config in use
+
+  If you think any of this information is wrong please report it to the referenced community portal.","The Hostname/IP ""hocine-PC"" was used to access the remote host.
+
+Generic web application scanning is disabled for this host via the ""Enable generic web application scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+This service seems to be NOT able to host PHP scripts.
+
+This service seems to be NOT able to host ASP scripts.
+
+The User-Agent ""Mozilla/5.0 [en] (X11, U; OpenVAS-VT 9.0.3)"" was used to access the remote host.
+
+Historic /scripts and /cgi-bin are not added to the directories used for CGI scanning. You can enable this again with the ""Add historic /scripts and /cgi-bin to directories for CGI scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+The following directories were used for CGI scanning:
+
+http://hocine-PC:2869/
+
+While this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards",1.3.6.1.4.1.25623.1.0.111038,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,b295c2c2-9747-4805-9762-d4228ceb7877,"","","","","
+Details:
+CGI Scanning Consolidation
+(OID: 1.3.6.1.4.1.25623.1.0.111038)
+Version used: $Revision: 13679 $
+","","","","https://community.greenbone.net/c/vulnerability-tests"
+192.168.43.61,WhiteHack,,,0.0,Log,"","Check for enabled / working Port scanner plugin","The script reports if:
+
+  - a custom scan configuration is in use without having a Port scanner from
+  the 'Port scanners' family enabled.
+
+  - a port scanner plugin was running into a timeout.
+
+  - a required port scanner (e.g. nmap) is not installed.","The host wasn't scanned due to the following possible reasons:
+
+ - No Port scanner plugin from the ""Port scanners"" family is included in this scan configuration. Recommended: Nmap (NASL wrapper).
+ - The Port scanner plugin reached a timeout during the port scanning phase. Please either choose a port range for this target containing less ports or raise the ""scanner_plugins_timeout"" scanner preference to a higher timeout.",1.3.6.1.4.1.25623.1.0.108323,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:23Z,4c43436d-fcd8-4207-a2d7-3b407c1d17b4,"","Based on the script output please:
+
+  - add a Port scanner plugin from the 'Port scanners' family to this scan
+  configuration. Recommended: Nmap (NASL wrapper).
+
+  - either choose a port range for this target containing less ports or raise
+  the 'scanner_plugins_timeout' scanner preference to a higher timeout.
+
+  - install the 'nmap' binary/package or make it accessible to the scanner.","","","
+Details:
+Check for enabled / working Port scanner plugin
+(OID: 1.3.6.1.4.1.25623.1.0.108323)
+Version used: $Revision: 10122 $
+","","","","http://docs.greenbone.net/GSM-Manual/gos-4/en/performance.html#scan-performance, http://docs.greenbone.net/GSM-Manual/gos-4/en/vulnerabilitymanagement.html?highlight=scanner_plugins_timeout#general-preferences"
+192.168.43.1,_gateway,,,0.0,Log,"","CPE Inventory","This routine uses information collected by other routines about
+  CPE identities (http://cpe.mitre.org/) of operating systems, services and
+  applications detected during the scan.","192.168.43.1|cpe:/a:thekelleys:dnsmasq:2.51
+192.168.43.1|cpe:/o:linux:kernel",1.3.6.1.4.1.25623.1.0.810002,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,8d521795-d106-40ff-a9fc-69fc8c2c120c,"","","","","
+Details:
+CPE Inventory
+(OID: 1.3.6.1.4.1.25623.1.0.810002)
+Version used: $Revision: 12413 $
+","","","",""
+192.168.43.182,jj-545976efc698,,,0.0,Log,"","CPE Inventory","This routine uses information collected by other routines about
+  CPE identities (http://cpe.mitre.org/) of operating systems, services and
+  applications detected during the scan.","192.168.43.182|cpe:/o:microsoft:windows_xp",1.3.6.1.4.1.25623.1.0.810002,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,933e69a1-b0e1-4d7f-8fa7-b3aec272ac7b,"","","","","
+Details:
+CPE Inventory
+(OID: 1.3.6.1.4.1.25623.1.0.810002)
+Version used: $Revision: 12413 $
+","","","",""
+192.168.43.240,hocine-PC,,,0.0,Log,"","CPE Inventory","This routine uses information collected by other routines about
+  CPE identities (http://cpe.mitre.org/) of operating systems, services and
+  applications detected during the scan.","192.168.43.240|cpe:/o:microsoft:windows_7:-:sp1",1.3.6.1.4.1.25623.1.0.810002,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,32471d95-a9d0-40ae-8cce-0ea9303df1db,"","","","","
+Details:
+CPE Inventory
+(OID: 1.3.6.1.4.1.25623.1.0.810002)
+Version used: $Revision: 12413 $
+","","","",""
+192.168.43.61,WhiteHack,,,0.0,Log,"","CPE Inventory","This routine uses information collected by other routines about
+  CPE identities (http://cpe.mitre.org/) of operating systems, services and
+  applications detected during the scan.","192.168.43.61|cpe:/o:linux:kernel",1.3.6.1.4.1.25623.1.0.810002,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:23Z,2eb83e61-f6d1-4abf-a79d-7d30ccb10aeb,"","","","","
+Details:
+CPE Inventory
+(OID: 1.3.6.1.4.1.25623.1.0.810002)
+Version used: $Revision: 12413 $
+","","","",""
+192.168.43.182,jj-545976efc698,135,tcp,0.0,Log,"Mitigation","DCE/RPC and MSRPC Services Enumeration","Distributed Computing Environment / Remote Procedure Calls (DCE/RPC) or MSRPC services running
+  on the remote host can be enumerated by connecting on port 135 and doing the appropriate queries.
+
+  The actual reporting takes place in the NVT 'DCE/RPC and MSRPC Services Enumeration Reporting'
+  (OID: 1.3.6.1.4.1.25623.1.0.10736)","A DCE endpoint resolution service seems to be running on this port.",1.3.6.1.4.1.25623.1.0.108044,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,2325b22a-8b9c-49dc-b436-de698db488b0,"An attacker may use this fact to gain more knowledge
+  about the remote host.","Filter incoming traffic to this port.","","","
+Details:
+DCE/RPC and MSRPC Services Enumeration
+(OID: 1.3.6.1.4.1.25623.1.0.108044)
+Version used: $Revision: 11885 $
+","","","",""
+192.168.43.240,hocine-PC,135,tcp,0.0,Log,"Mitigation","DCE/RPC and MSRPC Services Enumeration","Distributed Computing Environment / Remote Procedure Calls (DCE/RPC) or MSRPC services running
+  on the remote host can be enumerated by connecting on port 135 and doing the appropriate queries.
+
+  The actual reporting takes place in the NVT 'DCE/RPC and MSRPC Services Enumeration Reporting'
+  (OID: 1.3.6.1.4.1.25623.1.0.10736)","A DCE endpoint resolution service seems to be running on this port.",1.3.6.1.4.1.25623.1.0.108044,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,7d69c05f-42a5-4b3c-8c11-cce0199e2024,"An attacker may use this fact to gain more knowledge
+  about the remote host.","Filter incoming traffic to this port.","","","
+Details:
+DCE/RPC and MSRPC Services Enumeration
+(OID: 1.3.6.1.4.1.25623.1.0.108044)
+Version used: $Revision: 11885 $
+","","","",""
+192.168.43.240,hocine-PC,135,tcp,5.0,Medium,"Mitigation","DCE/RPC and MSRPC Services Enumeration Reporting","Distributed Computing Environment / Remote Procedure Calls (DCE/RPC) or MSRPC services running
+  on the remote host can be enumerated by connecting on port 135 and doing the appropriate queries.","Here is the list of DCE/RPC or MSRPC services running on this host via the TCP protocol:
+
+Port: 49152/tcp
+
+     UUID: d95afe70-a6d5-4259-822e-2c84da1ddb0d, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49152]
+
+Port: 49153/tcp
+
+     UUID: 06bba54a-be05-49f9-b0a0-30f790261023, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49153]
+     Annotation: Security Center
+
+     UUID: 30adc50c-5cbc-46ce-9a0e-91914789e23c, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49153]
+     Annotation: NRP server endpoint
+
+     UUID: 3c4728c5-f0ab-448b-bda1-6ce01eb0a6d5, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49153]
+     Annotation: DHCP Client LRPC Endpoint
+
+     UUID: 3c4728c5-f0ab-448b-bda1-6ce01eb0a6d6, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49153]
+     Annotation: DHCPv6 Client LRPC Endpoint
+
+     UUID: f6beaff7-1e19-4fbb-9f8f-b89e2018337c, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49153]
+     Annotation: Event log TCPIP
+
+Port: 49154/tcp
+
+     UUID: 552d076a-cb29-4e44-8b6a-d15e59e2c0af, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49154]
+     Annotation: IP Transition Configuration endpoint
+
+     UUID: 86d35949-83c9-4044-b424-db363231fd0c, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49154]
+
+     UUID: 98716d03-89ac-44c7-bb8c-285824e51c4a, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49154]
+     Annotation: XactSrv service
+
+     UUID: a398e520-d59a-4bdd-aa7a-3c1e0303a511, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49154]
+     Annotation: IKE/Authip API
+
+Port: 49155/tcp
+
+     UUID: 367abb81-9844-35f1-ad32-98f038001003, version 2
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49155]
+
+Port: 49156/tcp
+
+     UUID: 12345678-1234-abcd-ef00-0123456789ab, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49156]
+     Annotation: IPSec Policy agent endpoint
+     Named pipe : spoolss
+     Win32 service or process : spoolsv.exe
+     Description : Spooler service
+
+     UUID: 6b5bdd1e-528c-422c-af8c-a4079be4fe48, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49156]
+     Annotation: Remote Fw APIs
+
+Port: 49157/tcp
+
+     UUID: 12345778-1234-abcd-ef00-0123456789ac, version 1
+     Endpoint: ncacn_ip_tcp:192.168.43.240[49157]
+     Named pipe : lsass
+     Win32 service or process : lsass.exe
+     Description : SAM access
+
+Note: DCE/RPC or MSRPC services running on this host locally were identified. Reporting this list is not enabled by default due to the possible large size of this list. See the script preferences to enable this reporting.",1.3.6.1.4.1.25623.1.0.10736,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,58ea6dc9-61a3-470f-a184-93bdd9507b30,"An attacker may use this fact to gain more knowledge
+  about the remote host.","Filter incoming traffic to this ports.","","","
+Details:
+DCE/RPC and MSRPC Services Enumeration Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.10736)
+Version used: $Revision: 6319 $
+","","","",""
+192.168.43.240,hocine-PC,2869,tcp,0.0,Log,"","DIRB (NASL wrapper)","This script uses DIRB to find directories and files on web
+  applications via brute forcing. See the preferences section for configuration options.
+
+  Note: The plugin needs the 'dirb' binary found within the PATH of the user running the scanner and
+  needs to be executable for this user. The existence of this binary is checked and reported separately
+  within 'Availability of scanner helper tools' (OID: 1.3.6.1.4.1.25623.1.0.810000).","This are the directories/files found with brute force:
+
+http://192.168.43.240:2869/",1.3.6.1.4.1.25623.1.0.103079,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,7bbf007b-bbb9-4b90-8fbe-c764e360134a,"","","","","
+Details:
+DIRB (NASL wrapper)
+(OID: 1.3.6.1.4.1.25623.1.0.103079)
+Version used: $Revision: 13985 $
+","","","",""
+192.168.43.1,_gateway,53,tcp,0.0,Log,"","DNS Server Detection (TCP)","A DNS Server is running at this Host.
+  A Name Server translates domain names into IP addresses. This makes it
+  possible for a user to access a website by typing in the domain name instead of
+  the website's actual IP address.","The remote DNS server banner is:
+
+dnsmasq-2.51",1.3.6.1.4.1.25623.1.0.108018,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,9c04066a-0755-483d-bd3f-95ca450944a2,"","","","","
+Details:
+DNS Server Detection (TCP)
+(OID: 1.3.6.1.4.1.25623.1.0.108018)
+Version used: $Revision: 13541 $
+","","","",""
+192.168.43.1,_gateway,53,tcp,0.0,Log,"","Dnsmasq Detection","Detection of Dnsmasq","Detected Dnsmasq
+
+Version:  2.51
+Location: 53/tcp
+CPE:      cpe:/a:thekelleys:dnsmasq:2.51
+
+Concluded from version/product identification result:
+dnsmasq-2.51",1.3.6.1.4.1.25623.1.0.100266,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,081045b0-2ab2-4d88-af39-1d1747db7323,"","","","","
+Details:
+Dnsmasq Detection
+(OID: 1.3.6.1.4.1.25623.1.0.100266)
+Version used: $Revision: 10931 $
+","","","",""
+192.168.43.240,hocine-PC,2869,tcp,0.0,Log,"","Hidden WWW server name","It seems that your web server tries to hide its version
+  or name, which is a good thing.
+
+  However, using a special crafted request, the scanner was able to discover it.","It seems that your web server tries to hide its version
+or name, which is a good thing.
+However, using a special crafted request, the scanner was able
+to determine that is is running :
+ Microsoft-HTTPAPI/2.0
+
+Solution: Fix your configuration.",1.3.6.1.4.1.25623.1.0.11239,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,7114bdea-f70e-46fc-a6f0-8f69515e3849,"","Fix your configuration.","","","
+Details:
+Hidden WWW server name
+(OID: 1.3.6.1.4.1.25623.1.0.11239)
+Version used: $Revision: 13685 $
+","","","",""
+192.168.43.1,_gateway,,,0.0,Log,"","ICMP Timestamp Detection","The remote host responded to an ICMP timestamp request.
+  The Timestamp Reply is an ICMP message which replies to a Timestamp message. It consists
+  of the originating timestamp sent by the sender of the Timestamp as well as a receive
+  timestamp and a transmit timestamp. This information could theoretically be used to
+  exploit weak time-based random number generators in other services.","Vulnerability was detected according to the Vulnerability Detection Method.",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,f37cf687-6cdd-4262-822d-742a1834950b,"","","","","
+Details:
+ICMP Timestamp Detection
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: $Revision: 10411 $
+","","","CB-K15/1514, CB-K14/0632, DFN-CERT-2014-0658","http://www.ietf.org/rfc/rfc0792.txt"
+192.168.43.182,jj-545976efc698,,,0.0,Log,"","ICMP Timestamp Detection","The remote host responded to an ICMP timestamp request.
+  The Timestamp Reply is an ICMP message which replies to a Timestamp message. It consists
+  of the originating timestamp sent by the sender of the Timestamp as well as a receive
+  timestamp and a transmit timestamp. This information could theoretically be used to
+  exploit weak time-based random number generators in other services.","Vulnerability was detected according to the Vulnerability Detection Method.",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,69ec5377-2dbb-4a59-8575-d58cd8b34c6a,"","","","","
+Details:
+ICMP Timestamp Detection
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: $Revision: 10411 $
+","","","CB-K15/1514, CB-K14/0632, DFN-CERT-2014-0658","http://www.ietf.org/rfc/rfc0792.txt"
+192.168.43.240,hocine-PC,,,0.0,Log,"","ICMP Timestamp Detection","The remote host responded to an ICMP timestamp request.
+  The Timestamp Reply is an ICMP message which replies to a Timestamp message. It consists
+  of the originating timestamp sent by the sender of the Timestamp as well as a receive
+  timestamp and a transmit timestamp. This information could theoretically be used to
+  exploit weak time-based random number generators in other services.","Vulnerability was detected according to the Vulnerability Detection Method.",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,a639dff1-50c9-471e-8623-f29be5a0b915,"","","","","
+Details:
+ICMP Timestamp Detection
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: $Revision: 10411 $
+","","","CB-K15/1514, CB-K14/0632, DFN-CERT-2014-0658","http://www.ietf.org/rfc/rfc0792.txt"
+192.168.43.182,jj-545976efc698,445,tcp,0.0,Log,"","Microsoft SMB Signing Disabled","Checking for SMB signing is disabled.
+
+  The script logs in via smb, checks the SMB Negotiate Protocol response to
+  confirm SMB signing is disabled.","SMB signing is disabled on this host",1.3.6.1.4.1.25623.1.0.802726,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,51013ad7-7238-435b-a309-cbd855bb5ad4,"","","","","
+Details:
+Microsoft SMB Signing Disabled
+(OID: 1.3.6.1.4.1.25623.1.0.802726)
+Version used: $Revision: 11003 $
+","","","",""
+192.168.43.182,jj-545976efc698,445,tcp,9.3,High,"VendorFix","Microsoft Windows SMB Server Multiple Vulnerabilities-Remote (4013389)","This host is missing a critical security
+  update according to Microsoft Bulletin MS17-010.","Vulnerability was detected according to the Vulnerability Detection Method.",1.3.6.1.4.1.25623.1.0.810676,"CVE-2017-0143, CVE-2017-0144, CVE-2017-0145, CVE-2017-0146, CVE-2017-0147, CVE-2017-0148",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,b61854e2-c11b-4cdb-9cce-3bf015079e3b,"Successful exploitation will allow remote
+  attackers to gain the ability to execute code on the target server, also
+  could lead to information disclosure from the server.","Run Windows Update and update the
+  listed hotfixes or download and update mentioned hotfixes in the advisory","Microsoft Windows 10 x32/x64 Edition
+  Microsoft Windows Server 2012 Edition
+  Microsoft Windows Server 2016
+  Microsoft Windows 8.1 x32/x64 Edition
+  Microsoft Windows Server 2012 R2 Edition
+  Microsoft Windows 7 x32/x64 Edition Service Pack 1
+  Microsoft Windows Vista x32/x64 Edition Service Pack 2
+  Microsoft Windows Server 2008 R2 x64 Edition Service Pack 1
+  Microsoft Windows Server 2008 x32/x64 Edition Service Pack 2","Multiple flaws exist due to the way that the
+  Microsoft Server Message Block 1.0 (SMBv1) server handles certain requests.","Send the crafted SMB transaction request
+  with fid = 0 and check the response to confirm the vulnerability.
+Details:
+Microsoft Windows SMB Server Multiple Vulnerabilities-Remote (4013389)
+(OID: 1.3.6.1.4.1.25623.1.0.810676)
+Version used: $Revision: 11874 $
+","","96703,  96704,  96705,  96707,  96709,  96706","CB-K17/0435, DFN-CERT-2017-0448","https://support.microsoft.com/en-in/kb/4013078, https://technet.microsoft.com/library/security/MS17-010, https://github.com/rapid7/metasploit-framework/pull/8167/files"
+192.168.43.240,hocine-PC,445,tcp,9.3,High,"VendorFix","Microsoft Windows SMB Server Multiple Vulnerabilities-Remote (4013389)","This host is missing a critical security
+  update according to Microsoft Bulletin MS17-010.","Vulnerability was detected according to the Vulnerability Detection Method.",1.3.6.1.4.1.25623.1.0.810676,"CVE-2017-0143, CVE-2017-0144, CVE-2017-0145, CVE-2017-0146, CVE-2017-0147, CVE-2017-0148",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,7c63e96d-3051-4fc8-b160-0833c7bcbc8b,"Successful exploitation will allow remote
+  attackers to gain the ability to execute code on the target server, also
+  could lead to information disclosure from the server.","Run Windows Update and update the
+  listed hotfixes or download and update mentioned hotfixes in the advisory","Microsoft Windows 10 x32/x64 Edition
+  Microsoft Windows Server 2012 Edition
+  Microsoft Windows Server 2016
+  Microsoft Windows 8.1 x32/x64 Edition
+  Microsoft Windows Server 2012 R2 Edition
+  Microsoft Windows 7 x32/x64 Edition Service Pack 1
+  Microsoft Windows Vista x32/x64 Edition Service Pack 2
+  Microsoft Windows Server 2008 R2 x64 Edition Service Pack 1
+  Microsoft Windows Server 2008 x32/x64 Edition Service Pack 2","Multiple flaws exist due to the way that the
+  Microsoft Server Message Block 1.0 (SMBv1) server handles certain requests.","Send the crafted SMB transaction request
+  with fid = 0 and check the response to confirm the vulnerability.
+Details:
+Microsoft Windows SMB Server Multiple Vulnerabilities-Remote (4013389)
+(OID: 1.3.6.1.4.1.25623.1.0.810676)
+Version used: $Revision: 11874 $
+","","96703,  96704,  96705,  96707,  96709,  96706","CB-K17/0435, DFN-CERT-2017-0448","https://support.microsoft.com/en-in/kb/4013078, https://technet.microsoft.com/library/security/MS17-010, https://github.com/rapid7/metasploit-framework/pull/8167/files"
+192.168.43.240,hocine-PC,2869,tcp,0.0,Log,"","Nikto (NASL wrapper)","This plugin uses nikto to find weak CGI scripts and other known issues
+  regarding web server security. See the preferences section for configuration options.
+
+  Note: The plugin needs the 'nikto' or 'nikto.pl' binary found within the PATH of the user running the scanner and
+  needs to be executable for this user. The existence of this binary is checked and reported separately
+  within 'Availability of scanner helper tools' (OID: 1.3.6.1.4.1.25623.1.0.810000).","Here is the Nikto report:
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ No web server found on 192.168.43.240:2869
+---------------------------------------------------------------------------
++ 0 host(s) tested",1.3.6.1.4.1.25623.1.0.14260,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,1d020b1a-5518-4f77-805c-1eb02bf6f80a,"","","","","
+Details:
+Nikto (NASL wrapper)
+(OID: 1.3.6.1.4.1.25623.1.0.14260)
+Version used: $Revision: 13985 $
+","","","",""
+192.168.43.1,_gateway,,,0.0,Log,"","OS Detection Consolidation and Reporting","This script consolidates the OS information detected by several NVTs and tries to find the best matching OS.
+
+  Furthermore it reports all previously collected information leading to this best matching OS. It also reports possible additional information
+  which might help to improve the OS detection.
+
+  If any of this information is wrong or could be improved please consider to report these to the referenced community portal.","Best matching OS:
+
+OS: Linux/Unix
+CPE: cpe:/o:linux:kernel
+Found by NVT: 1.3.6.1.4.1.25623.1.0.108014 (DNS Server OS Identification)
+Concluded from DNS server banner on port 53/tcp: dnsmasq-2.51
+Setting key ""Host/runs_unixoide"" based on this information",1.3.6.1.4.1.25623.1.0.105937,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,2bd3b4ec-5370-485d-a6b6-6e1cd1669c8e,"","","","","
+Details:
+OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+Version used: $Revision: 14073 $
+","","","","https://community.greenbone.net/c/vulnerability-tests"
+192.168.43.182,jj-545976efc698,,,0.0,Log,"","OS Detection Consolidation and Reporting","This script consolidates the OS information detected by several NVTs and tries to find the best matching OS.
+
+  Furthermore it reports all previously collected information leading to this best matching OS. It also reports possible additional information
+  which might help to improve the OS detection.
+
+  If any of this information is wrong or could be improved please consider to report these to the referenced community portal.","Best matching OS:
+
+OS: Windows XP
+CPE: cpe:/o:microsoft:windows_xp
+Found by NVT: 1.3.6.1.4.1.25623.1.0.102011 (SMB NativeLanMan)
+Concluded from SMB/Samba banner on port 445/tcp: OS String: Windows 5.1; SMB String: Windows 2000 LAN Manager
+Setting key ""Host/runs_windows"" based on this information
+
+Other OS detections (in order of reliability):
+
+OS: Microsoft Windows
+CPE: cpe:/o:microsoft:windows
+Found by NVT: 1.3.6.1.4.1.25623.1.0.108044 (DCE/RPC and MSRPC Services Enumeration)
+Concluded from DCE/RPC and MSRPC Services Enumeration on port 135/tcp",1.3.6.1.4.1.25623.1.0.105937,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,63587526-3dcd-4281-8753-badacbbad530,"","","","","
+Details:
+OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+Version used: $Revision: 14073 $
+","","","","https://community.greenbone.net/c/vulnerability-tests"
+192.168.43.240,hocine-PC,,,0.0,Log,"","OS Detection Consolidation and Reporting","This script consolidates the OS information detected by several NVTs and tries to find the best matching OS.
+
+  Furthermore it reports all previously collected information leading to this best matching OS. It also reports possible additional information
+  which might help to improve the OS detection.
+
+  If any of this information is wrong or could be improved please consider to report these to the referenced community portal.","Best matching OS:
+
+OS: Windows 7 Professional 7601 Service Pack 1
+CPE: cpe:/o:microsoft:windows_7:-:sp1
+Found by NVT: 1.3.6.1.4.1.25623.1.0.102011 (SMB NativeLanMan)
+Concluded from SMB/Samba banner on port 445/tcp: OS String: Windows 7 Professional 7601 Service Pack 1; SMB String: Windows 7 Professional 6.1
+Setting key ""Host/runs_windows"" based on this information
+
+Other OS detections (in order of reliability):
+
+OS: Microsoft Windows
+CPE: cpe:/o:microsoft:windows
+Found by NVT: 1.3.6.1.4.1.25623.1.0.108044 (DCE/RPC and MSRPC Services Enumeration)
+Concluded from DCE/RPC and MSRPC Services Enumeration on port 135/tcp",1.3.6.1.4.1.25623.1.0.105937,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,24b8b26b-e62c-44fb-93c2-9728e13ae052,"","","","","
+Details:
+OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+Version used: $Revision: 14073 $
+","","","","https://community.greenbone.net/c/vulnerability-tests"
+192.168.43.61,WhiteHack,,,0.0,Log,"","OS Detection Consolidation and Reporting","This script consolidates the OS information detected by several NVTs and tries to find the best matching OS.
+
+  Furthermore it reports all previously collected information leading to this best matching OS. It also reports possible additional information
+  which might help to improve the OS detection.
+
+  If any of this information is wrong or could be improved please consider to report these to the referenced community portal.","Best matching OS:
+
+OS: Linux Kernel
+CPE: cpe:/o:linux:kernel
+Found by NVT: 1.3.6.1.4.1.25623.1.0.102002 (ICMP based OS Fingerprinting)
+Concluded from ICMP based OS fingerprint
+Setting key ""Host/runs_unixoide"" based on this information",1.3.6.1.4.1.25623.1.0.105937,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:23Z,da1de91a-0533-4906-b94c-8f7eb024b3fe,"","","","","
+Details:
+OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+Version used: $Revision: 14073 $
+","","","","https://community.greenbone.net/c/vulnerability-tests"
+192.168.43.182,jj-545976efc698,,,10.0,High,"Mitigation","OS End Of Life Detection","OS End Of Life Detection
+
+  The Operating System on the remote host has reached the end of life and should
+  not be used anymore.","The ""Windows XP"" Operating System on the remote host has reached the end of life.
+
+CPE:               cpe:/o:microsoft:windows_xp
+EOL date:          2014-04-08
+EOL info:          https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=Microsoft%20Windows%20XP&Filter=FilterNO",1.3.6.1.4.1.25623.1.0.103674,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,61555fd8-7645-4ca4-9ffb-e9902172cf94,"","","","","
+Details:
+OS End Of Life Detection
+(OID: 1.3.6.1.4.1.25623.1.0.103674)
+Version used: $Revision: 8927 $
+","Product: cpe:/o:microsoft:windows_xp
+Method: OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+","","",""
+192.168.43.1,_gateway,,,0.0,Log,"","Record route","This plugin sends packets with the 'Record Route' option.
+  It is a complement to traceroute.","Here is the route recorded between 192.168.43.61 and 192.168.43.1 :
+192.168.43.1.
+192.168.43.1.",1.3.6.1.4.1.25623.1.0.12264,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,ac28fd9b-a201-4e14-af69-7ff88536f1e0,"","","","","
+Details:
+Record route
+(OID: 1.3.6.1.4.1.25623.1.0.12264)
+Version used: $Revision: 10411 $
+","","","",""
+192.168.43.182,jj-545976efc698,,,0.0,Log,"","Record route","This plugin sends packets with the 'Record Route' option.
+  It is a complement to traceroute.","Here is the route recorded between 192.168.43.61 and 192.168.43.182 :
+192.168.43.182.",1.3.6.1.4.1.25623.1.0.12264,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,009a2f21-04d2-410c-9645-bf6a2afdfb62,"","","","","
+Details:
+Record route
+(OID: 1.3.6.1.4.1.25623.1.0.12264)
+Version used: $Revision: 10411 $
+","","","",""
+192.168.43.240,hocine-PC,2869,tcp,0.0,Log,"","Service Detection with HELP Request","This plugin performs service detection.
+
+  This plugin is a complement of find_service.nasl. It sends a 'HELP'
+  request to the remaining unknown services and tries to identify them.","A (non-RFC compliant) web server seems to be running on this port",1.3.6.1.4.1.25623.1.0.11153,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,aba63dc3-d318-4de8-89b4-34d053900a01,"","","","","
+Details:
+Service Detection with 'HELP' Request'
+(OID: 1.3.6.1.4.1.25623.1.0.11153)
+Version used: $Revision: 14067 $
+","","","",""
+192.168.43.182,jj-545976efc698,445,tcp,0.0,Log,"","SMB NativeLanMan","It is possible to extract OS, domain and SMB server information
+  from the Session Setup AndX Response packet which is generated during NTLM authentication.","Detected SMB workgroup: HH
+Detected SMB server: Windows 2000 LAN Manager
+Detected OS: Windows 5.1",1.3.6.1.4.1.25623.1.0.102011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,781286ad-4134-418b-8c2f-c9c058fff348,"","","","","
+Details:
+SMB NativeLanMan
+(OID: 1.3.6.1.4.1.25623.1.0.102011)
+Version used: $Revision: 13813 $
+","","","",""
+192.168.43.240,hocine-PC,445,tcp,0.0,Log,"","SMB NativeLanMan","It is possible to extract OS, domain and SMB server information
+  from the Session Setup AndX Response packet which is generated during NTLM authentication.","Detected SMB workgroup: WORKGROUP
+Detected SMB server: Windows 7 Professional 6.1
+Detected OS: Windows 7 Professional 7601 Service Pack 1",1.3.6.1.4.1.25623.1.0.102011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,aa3737a5-fad6-4345-8e0f-6f9616be506c,"","","","","
+Details:
+SMB NativeLanMan
+(OID: 1.3.6.1.4.1.25623.1.0.102011)
+Version used: $Revision: 13813 $
+","","","",""
+192.168.43.182,jj-545976efc698,445,tcp,0.0,Log,"","SMB Remote Version Detection","Detection of Server Message Block(SMB).
+
+  This script sends SMB Negotiation request and try to get the version from the
+  response.","Only SMBv1 is enabled on remote target",1.3.6.1.4.1.25623.1.0.807830,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,792ea63e-fefb-4e0b-8872-f4264f609a87,"","","","","
+Details:
+SMB Remote Version Detection
+(OID: 1.3.6.1.4.1.25623.1.0.807830)
+Version used: $Revision: 10898 $
+","","","",""
+192.168.43.240,hocine-PC,445,tcp,0.0,Log,"","SMB Remote Version Detection","Detection of Server Message Block(SMB).
+
+  This script sends SMB Negotiation request and try to get the version from the
+  response.","SMBv1 and SMBv2 are enabled on remote target",1.3.6.1.4.1.25623.1.0.807830,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,33f6da8c-95cc-433c-b709-a2da9b3274d2,"","","","","
+Details:
+SMB Remote Version Detection
+(OID: 1.3.6.1.4.1.25623.1.0.807830)
+Version used: $Revision: 10898 $
+","","","",""
+192.168.43.182,jj-545976efc698,,,0.0,Log,"","SMB Test with smbclient","This script reports information about the SMB server of the remote host
+  collected with the 'smbclient' tool.","Error getting SMB-Data -> SESSION SETUP FAILED: NT_STATUS_INVALID_PARAMETER",1.3.6.1.4.1.25623.1.0.90011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,62da1e28-1dba-47c4-8c85-2410f5dc8fa9,"","","","","
+Details:
+SMB Test with 'smbclient'
+(OID: 1.3.6.1.4.1.25623.1.0.90011)
+Version used: $Revision: 13274 $
+","","","",""
+192.168.43.240,hocine-PC,445,tcp,0.0,Log,"","SMB Test with smbclient","This script reports information about the SMB server of the remote host
+  collected with the 'smbclient' tool.","OS Version = ANONYMOUS LOGIN SUCCESSFUL
+
+Domain = ANONYMOUS LOGIN SUCCESSFUL
+
+SMB Serverversion = ANONYMOUS LOGIN SUCCESSFUL",1.3.6.1.4.1.25623.1.0.90011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,60769fef-213e-416f-8ddc-24b4f1366b8e,"","","","","
+Details:
+SMB Test with 'smbclient'
+(OID: 1.3.6.1.4.1.25623.1.0.90011)
+Version used: $Revision: 13274 $
+","","","",""
+192.168.43.182,jj-545976efc698,445,tcp,0.0,Log,"","SMB/CIFS Server Detection","This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.","A CIFS server is running on this port",1.3.6.1.4.1.25623.1.0.11011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,3976680d-15c4-4a51-a463-688589e48f9f,"","","","","
+Details:
+SMB/CIFS Server Detection
+(OID: 1.3.6.1.4.1.25623.1.0.11011)
+Version used: $Revision: 13541 $
+","","","",""
+192.168.43.182,jj-545976efc698,139,tcp,0.0,Log,"","SMB/CIFS Server Detection","This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.","A SMB server is running on this port",1.3.6.1.4.1.25623.1.0.11011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,be8c57b4-1a98-4fee-bcb5-27a889c70262,"","","","","
+Details:
+SMB/CIFS Server Detection
+(OID: 1.3.6.1.4.1.25623.1.0.11011)
+Version used: $Revision: 13541 $
+","","","",""
+192.168.43.240,hocine-PC,445,tcp,0.0,Log,"","SMB/CIFS Server Detection","This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.","A CIFS server is running on this port",1.3.6.1.4.1.25623.1.0.11011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,cbcdf2a6-5e11-4215-8597-6f566ea4e44f,"","","","","
+Details:
+SMB/CIFS Server Detection
+(OID: 1.3.6.1.4.1.25623.1.0.11011)
+Version used: $Revision: 13541 $
+","","","",""
+192.168.43.240,hocine-PC,139,tcp,0.0,Log,"","SMB/CIFS Server Detection","This script detects whether port 445 and 139 are open and
+  if they are running a CIFS/SMB server.","A SMB server is running on this port",1.3.6.1.4.1.25623.1.0.11011,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,184d1702-1c37-4c68-a7e3-a86abab0f202,"","","","","
+Details:
+SMB/CIFS Server Detection
+(OID: 1.3.6.1.4.1.25623.1.0.11011)
+Version used: $Revision: 13541 $
+","","","",""
+192.168.43.1,_gateway,,,2.6,Low,"Mitigation","TCP timestamps","The remote host implements TCP timestamps and therefore allows to compute
+  the uptime.","It was detected that the host implements RFC1323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 7773897
+Packet 2: 7774012",1.3.6.1.4.1.25623.1.0.80091,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,544fc4ff-f5db-470b-a39e-ed5bdedebadf,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line 'net.ipv4.tcp_timestamps = 0' to
+  /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the
+  Timestamp options when initiating TCP connections, but use them if the TCP peer
+  that is initiating communication includes them in their synchronize (SYN) segment.
+
+  See also: http://www.microsoft.com/en-us/download/details.aspx?id=9152","TCP/IPv4 implementations that implement RFC1323.","The remote host implements TCP timestamps, as defined by RFC1323.","Special IP packets are forged and sent with a little delay in between to the
+  target IP. The responses are searched for a timestamps. If found, the timestamps are reported.
+Details:
+TCP timestamps
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: $Revision: 10411 $
+","","","","http://www.ietf.org/rfc/rfc1323.txt"
+192.168.43.1,_gateway,,,0.0,Log,"","Traceroute","A traceroute from the scanning server to the target system was
+  conducted. This traceroute is provided primarily for informational value only. In the vast
+  majority of cases, it does not represent a vulnerability. However, if the displayed traceroute
+  contains any private addresses that should not have been publicly visible, then you have an
+  issue you need to correct.","Here is the route from 192.168.43.61 to 192.168.43.1:
+
+192.168.43.61
+192.168.43.1",1.3.6.1.4.1.25623.1.0.51662,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:14Z,e376bf53-90ec-4754-8714-624d0ddc89c0,"","Block unwanted packets from escaping your network.","","","
+Details:
+Traceroute
+(OID: 1.3.6.1.4.1.25623.1.0.51662)
+Version used: $Revision: 10411 $
+","","","",""
+192.168.43.182,jj-545976efc698,,,0.0,Log,"","Traceroute","A traceroute from the scanning server to the target system was
+  conducted. This traceroute is provided primarily for informational value only. In the vast
+  majority of cases, it does not represent a vulnerability. However, if the displayed traceroute
+  contains any private addresses that should not have been publicly visible, then you have an
+  issue you need to correct.","Here is the route from 192.168.43.61 to 192.168.43.182:
+
+192.168.43.61
+192.168.43.182",1.3.6.1.4.1.25623.1.0.51662,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:48:53Z,16d142bc-c247-4776-b490-97c4da85f21e,"","Block unwanted packets from escaping your network.","","","
+Details:
+Traceroute
+(OID: 1.3.6.1.4.1.25623.1.0.51662)
+Version used: $Revision: 10411 $
+","","","",""
+192.168.43.240,hocine-PC,,,0.0,Log,"","Traceroute","A traceroute from the scanning server to the target system was
+  conducted. This traceroute is provided primarily for informational value only. In the vast
+  majority of cases, it does not represent a vulnerability. However, if the displayed traceroute
+  contains any private addresses that should not have been publicly visible, then you have an
+  issue you need to correct.","Here is the route from 192.168.43.61 to 192.168.43.240:
+
+192.168.43.61
+192.168.43.240",1.3.6.1.4.1.25623.1.0.51662,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,e76b2947-719e-46a2-b926-b481ca098c12,"","Block unwanted packets from escaping your network.","","","
+Details:
+Traceroute
+(OID: 1.3.6.1.4.1.25623.1.0.51662)
+Version used: $Revision: 10411 $
+","","","",""
+192.168.43.240,hocine-PC,554,tcp,0.0,Log,"","Unknown OS and Service Banner Reporting","This NVT consolidates and reports the information collected by
+  the following NVTs:
+
+  - Collect banner of unknown services (OID: 1.3.6.1.4.1.25623.1.0.11154)
+
+  - Service Detection (unknown) with nmap (OID: 1.3.6.1.4.1.25623.1.0.66286)
+
+  - Service Detection (wrapped) with nmap (OID: 1.3.6.1.4.1.25623.1.0.108525)
+
+  - OS Detection Consolidation and Reporting (OID: 1.3.6.1.4.1.25623.1.0.105937)
+
+  If you know any of the information reported here, please send the full output to
+  the referenced community portal.","Nmap service detection (unknown) result for this port: rtsp
+
+This is a guess. A confident identification of the service was not possible.
+
+Hint: If you're running a recent nmap version try to run nmap with the following command: 'nmap -sV -Pn -p 554 192.168.43.240' and submit a possible collected fingerprint to the nmap database.",1.3.6.1.4.1.25623.1.0.108441,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,a7c29c71-d8c6-472f-9990-86b8d8e7fca2,"","","","","
+Details:
+Unknown OS and Service Banner Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.108441)
+Version used: $Revision: 12934 $
+","","","","https://community.greenbone.net/c/vulnerability-tests"
+192.168.43.240,hocine-PC,2869,tcp,0.0,Log,"","wapiti (NASL wrapper)","This plugin uses wapiti to find
+  web security issues.
+
+  Make sure to have wapiti 2.x as wapiti 1.x is not supported.
+
+  See the preferences section for wapiti options.
+
+  Note that the scanner is using limited set of wapiti options. Therefore, for more complete web
+  assessment, you should use standalone wapiti tool for deeper/customized checks.
+
+  Note: The plugin needs the 'wapiti' binary found within the PATH of the user running the scanner and
+  needs to be executable for this user. The existence of this binary is checked and reported separately
+  within 'Availability of scanner helper tools' (OID: 1.3.6.1.4.1.25623.1.0.810000).","The wapiti report filename is empty. That could mean that a wrong version of wapiti is used or tmp dir is not accessible. Make sure to have wapiti 2.x as wapiti 1.x is not supported.
+In short: Check the installation of wapiti and the scanner.",1.3.6.1.4.1.25623.1.0.80110,"NOCVE",fec740e1-43ca-4fa8-a1dc-882cbc730bd0,"",2019-03-17T19:49:08Z,57677671-011d-4e95-8159-e463bacff208,"","","","","
+Details:
+wapiti (NASL wrapper)
+(OID: 1.3.6.1.4.1.25623.1.0.80110)
+Version used: $Revision: 13985 $
+","","","",""

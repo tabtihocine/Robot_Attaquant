@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-#import getip
+import getip
 import re
 import time
 import wait
 import os
 
-network_to_scan = "192.168.43.0/24"
+network_to_scan = getip.getMyIp()
 name_of_scan="host_scan"
 name_of_task="sacn_network"
 
