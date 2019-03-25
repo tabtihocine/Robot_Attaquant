@@ -27,10 +27,10 @@ def wait_result():
     
 # methode to parse the results and format it to creat a csv file
 # to use it in exploittion 
-def parcer_result_scannig():
+def parcer_result_scannig(result_of_scannig):
     filed=["host","ref"]
     rows=[]
-    result_of_scannig=open("result_of_scannig.csv" ,"r")
+    result_of_scannig=open(str(result_of_scannig) ,"r")
     lines=csv.reader(result_of_scannig)
     for line in lines:
             if (str(line[5])=="High" and str(line[11])!="NOCVE"):
@@ -69,7 +69,6 @@ def parcer_result_scannig():
     writer=csv.DictWriter(high_vul,fieldnames=filed)
     writer.writerows(temp)
     high_vul.close()
-
 
 def getMyIp():
     os.system("ifconfig > myip.txt")
