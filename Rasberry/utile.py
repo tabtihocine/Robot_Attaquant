@@ -4,8 +4,9 @@ import time
 import thread
 import csv
 import os
+import subprocess
 
-# found in www.StackOverFlow.com
+# found on www.StackOverFlow.com
 #used to wait result for scannig
 def wait_result():
 
@@ -19,14 +20,14 @@ def wait_result():
 
     lock = thread.allocate_lock()
     thread.start_new_thread( lock_call, ( work, lock, ) )
-    
+
     while(not lock.locked()):
         time.sleep(1)
     while(lock.locked()):
         time.sleep(1)
-    
+
 # methode to parse the results and format it to creat a csv file
-# to use it in exploittion 
+# to use it in exploittion
 def parcer_result_scannig(result_of_scannig):
     filed=["host","ref"]
     rows=[]
@@ -50,7 +51,7 @@ def parcer_result_scannig(result_of_scannig):
             liste_of_hosts.append(line)
     temp=[liste_of_hosts[0]]
     liste_of_hosts.pop(0)
-    for host in liste_of_hosts: 
+    for host in liste_of_hosts:
             tmp=True
             for tem in temp:
                     if tem[0] == host[0]:
@@ -76,7 +77,7 @@ def getMyIp():
     i = 0
     while i < 19:
         line = file.readline()
-        i = i + 1 
+        i = i + 1
     ipsplit = line.split()
     file.close()
     ipsplit = ipsplit[1].split('.')
@@ -84,3 +85,24 @@ def getMyIp():
     ipsplit = ".".join([ipsplit[0],ipsplit[1],ipsplit[2],ipsplit[3]])
     adress = ipsplit + "/24"
     return adress
+
+def getIpAP():
+    os.system("ifconfig > myip.txt")
+    file = open("myip.txt", "r")
+    i = 0
+    while i < 19:
+        line = file.readline()
+        i = i + 1
+    ipsplit = line.split()
+    file.close()
+    ipsplit = ipsplit[1].split('.')
+    ipsplit[3] = '1'
+    ipsplit = ".".join([ipsplit[0],ipsplit[1],ipsplit[2],ipsplit[3]])
+    return ipsplit
+
+def getAPMac ():
+    ip = getIpAP()
+    AP = subprocess.check_output("arp -a | grep {}".format(ip),shell=True)
+    APsplited = AP.split()
+    MAC = APsplited[3]
+    return MAC
