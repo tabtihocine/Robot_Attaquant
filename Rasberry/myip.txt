@@ -10,18 +10,18 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         inet 127.0.0.1  netmask 255.0.0.0
         inet6 ::1  prefixlen 128  scopeid 0x10<host>
         loop  txqueuelen 1000  (Boucle locale)
-        RX packets 1908  bytes 155684 (152.0 KiB)
+        RX packets 340  bytes 27000 (26.3 KiB)
         RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 1908  bytes 155684 (152.0 KiB)
+        TX packets 340  bytes 27000 (26.3 KiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.168.43.64  netmask 255.255.255.0  broadcast 192.168.43.255
-        inet6 fe80::1800:6b08:6ffa:1f8b  prefixlen 64  scopeid 0x20<link>
-        inet6 2a04:cec0:1004:3717:4408:c4ff:ec8d:4364  prefixlen 64  scopeid 0x0<global>
-        ether 00:27:10:5f:d3:21  txqueuelen 1000  (Ethernet)
-        RX packets 21  bytes 4413 (4.3 KiB)
+        inet 192.168.43.51  netmask 255.255.255.0  broadcast 192.168.43.255
+        inet6 fe80::bbf1:ed71:401b:9d7  prefixlen 64  scopeid 0x20<link>
+        inet6 2a04:cec0:100a:2f9e:99f:9e03:db64:52c9  prefixlen 64  scopeid 0x0<global>
+        ether 00:27:10:5f:d3:20  txqueuelen 1000  (Ethernet)
+        RX packets 49339  bytes 50505231 (48.1 MiB)
         RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 31  bytes 4442 (4.3 KiB)
+        TX packets 30056  bytes 4851090 (4.6 MiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
