@@ -26,6 +26,16 @@ def channel():
     for chan in channels.split('\n'):
         if "Current" in chan:
             chann= chan.strip()
-    numbers =  re.findall('\d+', chann)
-    currentChannel = numbers[-1]
+    channSplit = chann.split()[-1]
+    channAfterSplit = re.findall('\d+',channSplit)
+    currentChannel=""
+    for chanls in channAfterSplit:
+        currentChannel += str(chanls)
+    # channSplited = chann.split()
+    # channelNotCleaned= channSplited[-1]
+    # channelCleaned = re.findall('\d+', channelNotCleaned)
+    # numbers =  re.findall('\d+', chann)
+    # currentChannel = numbers[-1]
     return currentChannel
+
+print(channel())
