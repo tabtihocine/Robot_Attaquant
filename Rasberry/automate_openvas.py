@@ -70,10 +70,10 @@ for line in line_xml:
         id_of_report = yes_i_found.group(1)
 
         name_of_report="result_of_scannig.csv"            
-        openvas_report_dowland= ("omp -u admin -w admin --get-report "+id_of_report+" --format c1645568-627a-11e3-a660-406186ea4fc5 > "+name_of_report+"") % (id_of_report, name_of_report)
+        openvas_report_dowland= ("omp -u admin -w admin --get-report "+id_of_report+" --format c1645568-627a-11e3-a660-406186ea4fc5 > "+name_of_report+"")
         os.system(openvas_report_dowland)
 
 print "================================="
-print '\t\t'"finish scannig"
+print '\t'"finish scannig"
 print "================================="
 

